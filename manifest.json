@@ -1,0 +1,22 @@
+{
+    "name": "GiangCustom-extension",
+    "version": "1.0.0",
+    "description": "just custom extension",
+    "manifest_version": 3,
+    "author": "giangnt",
+    "content_scripts": [
+        {
+            "matches": ["https://tuhocielts.dolenglish.vn/*"],
+            "css": ["css/style.css"],
+            "js": ["js/function.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "icons/icon16.avif",
+          "48": "icons/icon16.avif",
+          "128": "icons/icon16.avif"
+        }
+      }
+}
