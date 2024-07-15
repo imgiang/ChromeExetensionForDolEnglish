@@ -1,3 +1,49 @@
-.ksYsCI.responsive-typography.dol.dol-typo{
-    color: greenyellow !important;
+#floatingButton {
+    position: fixed;
+    right: 20px;
+    top: 300px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 5000; /* Ensure the button is always on top */
+}
+
+#floatingButton:hover {
+    background-color: #0056b3;
+}
+
+#floatingButton2 {
+    position: fixed;
+    right: 20px;
+    top: 370px;
+    width: 50px;
+    height: 50px;
+    background-color: #069612;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 5000; /* Ensure the button is always on top */
+}
+
+#floatingButton2:hover {
+    background-color: #11ca0098;
+}
+
+div.DoDictationAudioAfterLogin__Body-sc-1ufhija-3{
+    color: red;
 }
