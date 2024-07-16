@@ -44,6 +44,10 @@
     background-color: #11ca0098;
 }
 
-div.DoDictationAudioAfterLogin__Body-sc-1ufhija-3{
-    color: red;
+.InCorrectColor{
+    color: red !important;
 }
+.CorrectColor{
+    color: green !important;
+}
+
