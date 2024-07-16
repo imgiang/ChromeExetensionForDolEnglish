@@ -44,19 +44,19 @@ const init = function () {
                 wordList.push(span.innerHTML);
             });
         }
-        v2 = wordList[1].split(/(\.)/).filter(Boolean);
+        const normalize = (str) => str.replace(/['"]/g, '').replace(/’/g, "'").trim();
+        v2 = normalize(wordList[1]).split(/([.,])/).filter(Boolean);
         v2 = v2.flatMap(item => item.split(/\s+/)).filter(Boolean);
-
+        console.log(v1)
+        console.log(v2)
         // compare two array
         for (let i = 0; i < v2.length; i++) {
-            if (v1[i].toLowerCase() !== v2[i].toLowerCase()) {
-                console.log(v1Input[i]);
-                console.log(v1Input[i].classList);
-                v1Input[i].classList.add('InCorrectColor');
-            } else {
-                console.log(v1Input[i]);
-                console.log(v1Input[i].classList);
+            v1Input[i].classList.remove('InCorrectColor');
+            v1Input[i].classList.remove('CorrectColor');
+            if ((v1[i].toLowerCase()) === (v2[i].toLowerCase())) {
                 v1Input[i].classList.add('CorrectColor');
+            } else {
+                v1Input[i].classList.add('InCorrectColor');
             }
         }
     });
