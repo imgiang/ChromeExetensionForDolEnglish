@@ -15,6 +15,8 @@ const init = function () {
         v1 = [];
         v2 = [];
         v1Input = [];
+        const normalize = (str) => str.replace(/['"]/g, '').replace(/’/g, "'").trim();
+        
         const nodeList = document.querySelectorAll("div.DoDictationAudioAfterLogin__Body-sc-1ufhija-3");
         nodeList.forEach(element => {
             const children = element.children;
@@ -26,11 +28,11 @@ const init = function () {
 
                 inputs.forEach(input => {
                     v1Input.push(input);
-                    v1.push(input.value);
+                    v1.push(normalize(input.value));
                 });
                 spans.forEach(span => {
                     v1Input.push(span);
-                    v1.push(span.innerHTML);
+                    v1.push(normalize(span.innerHTML));
                 });
             }
         });
@@ -44,8 +46,7 @@ const init = function () {
                 wordList.push(span.innerHTML);
             });
         }
-        const normalize = (str) => str.replace(/['"]/g, '').replace(/’/g, "'").trim();
-        v2 = normalize(wordList[1]).split(/([.,])/).filter(Boolean);
+        v2 = normalize(wordList[1]).split(/([.,?!])/).filter(Boolean);
         v2 = v2.flatMap(item => item.split(/\s+/)).filter(Boolean);
         console.log(v1)
         console.log(v2)
