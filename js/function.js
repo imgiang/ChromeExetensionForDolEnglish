@@ -36,6 +36,7 @@ const init = function () {
                 });
             }
         });
+        v1 = v1.filter(Boolean);
 
         // get v2
         const nodeList2 = document.querySelectorAll(".SectionViewScriptDetail__Content-sc-uknfvf-2.jXPNsu");
